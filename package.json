@@ -1,20 +1,54 @@
 {
-  "name": "registritor",
+  "name": "@k3v-d3v/registritor",
   "version": "0.0.0",
   "description": "Introspect packages in the NPM registry",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "registritor": "./dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cli": "tsc --project tsconfig.json --noEmit false && node dist/cli.js",
+    "build": "tsup --config tsup.config.ts",
+    "lint": "tsc --project tsconfig.json",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k3v-d3v/registritor.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "npm",
+    "registry",
+    "introspect",
+    "packages",
+    "audit"
+  ],
+  "author": "k3v-d3v",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/k3v-d3v/registritor/issues"
   },
-  "homepage": "https://github.com/k3v-d3v/registritor#readme"
+  "homepage": "https://github.com/k3v-d3v/registritor#readme",
+  "devDependencies": {
+    "@types/node": "22.13.1",
+    "tsup": "8.3.6",
+    "typescript": "5.7.3"
+  }
 }
