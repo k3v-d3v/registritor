@@ -11,6 +11,5 @@
     "declaration": true,
     "declarationDir": "./dist",
     "noEmit": true
-  },
-  "include": ["src/**/*.ts"]
+  }
 }

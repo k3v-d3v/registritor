@@ -1,0 +1,49 @@
+{
+  "name": "@k3v-d3v/registritor",
+  "version": "0.0.0",
+  "description": "Introspect packages in the NPM registry",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "registritor": "./dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "cli": "tsc --project tsconfig.json --noEmit false && node dist/cli.js",
+    "build": "tsup --config ../../tsup.config.base.ts",
+    "lint": "tsc --project tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k3v-d3v/registritor.git"
+  },
+  "keywords": [
+    "npm",
+    "registry",
+    "introspect",
+    "packages",
+    "audit"
+  ],
+  "author": "k3v-d3v",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k3v-d3v/registritor/issues"
+  },
+  "homepage": "https://github.com/k3v-d3v/registritor#readme"
+}
