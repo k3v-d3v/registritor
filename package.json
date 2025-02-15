@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Introspect packages in the NPM registry",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "version": "lerna version --no-private --conventional-commits --create-release github --loglevel silly",
+    "publish": "lerna publish from-git --no-private --dist-tag latest --loglevel verbose"
   },
   "repository": {
     "type": "git",
