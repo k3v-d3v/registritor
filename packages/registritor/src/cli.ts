@@ -2,9 +2,16 @@
 
 import { Registritor, PackageMetadata } from "./index";
 import { writeFileSync } from "fs";
+import { version } from "../package.json";
 
 const args = process.argv.slice(2);
-const usage = "Usage: registritor <package-name> [-f <file-name>]";
+const usage =
+  "Usage: registritor <package-name> [-f <file-name>] [-v | --version]";
+
+if (args.includes("-v") || args.includes("--version")) {
+  console.log(version);
+  process.exit(0);
+}
 
 if (args.length !== 1 && args.length !== 3) {
   console.error(usage);
