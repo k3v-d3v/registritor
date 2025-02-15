@@ -4,7 +4,8 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true,
-    "declarationDir": "./dist"
+    "declarationDir": "./dist",
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"]
 }
