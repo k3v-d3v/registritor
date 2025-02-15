@@ -1,6 +1,6 @@
 {
   "name": "@k3v-d3v/registritor",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Introspect packages in the NPM registry",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
