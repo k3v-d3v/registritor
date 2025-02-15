@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "0.0.0",
+  "packages": ["packages/*"],
+  "npmClient": "pnpm",
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org/"
+    },
+    "version": {
+      "message": "chore(release): 🔖 create new tag and release %s",
+      "conventionalCommits": true
+    }
+  },
+  "ignoreChanges": ["!packages/**/src/*.ts"]
+}
